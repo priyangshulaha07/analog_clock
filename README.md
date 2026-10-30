@@ -107,6 +107,8 @@ Add your project screenshot here:
 Computer Science & Engineering Student
 
 GitHub: [YOUR-GITHUB-USERNAME](https://github.com/priyangshulaha07)
+live preview : http://127.0.0.1:3000/analog_clock/index.html?vscode-livepreview=true
+
 
 ## 📄 License
 
