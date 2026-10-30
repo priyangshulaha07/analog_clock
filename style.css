@@ -1,82 +1,419 @@
+
+/* =========================
+   GLOBAL STYLE
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: black;
-    margin: 0;
+
+    background:
+        radial-gradient(circle, #493525, #100a06 80%);
+
+    font-family: Georgia, serif;
+    padding: 20px;
 }
 
-.clock {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background-color: black;
-    border: 2px solid white;
+/* =========================
+   WOODEN CLOCK BODY
+========================= */
+
+.clock-case {
+    width: 350px;
+    height: 720px;
+
     position: relative;
+
+    background: linear-gradient(
+        90deg,
+        #291006,
+        #693719,
+        #a36532,
+        #663115,
+        #281006
+    );
+
+    border: 12px ridge #b7833e;
+
+    border-radius: 160px 160px 35px 35px;
+
+    box-shadow:
+        0 20px 50px #000,
+        inset 0 0 25px #e0a75d,
+        inset 0 0 10px #170903;
 }
+
+/* =========================
+   DECORATIONS
+========================= */
+
+.top-decoration {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    color: #f3ce7b;
+    font-size: 35px;
+
+    text-shadow: 0 0 10px #ffcc66;
+}
+
+.bottom-decoration {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    color: #f3ce7b;
+    font-size: 28px;
+}
+
+/* =========================
+   ANALOG CLOCK
+========================= */
+
+.clock {
+    width: 270px;
+    height: 270px;
+
+    position: absolute;
+    top: 38px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        #fff7df,
+        #ead09b,
+        #c4a16a
+    );
+
+    border: 10px ridge #c28c3c;
+
+    box-shadow:
+        0 5px 15px #160b03,
+        inset 0 0 20px #88632e;
+}
+
+/* CLOCK BRAND */
+
+.clock-brand {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: #70451b;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+/* =========================
+   ROMAN NUMERALS
+========================= */
+
+.num {
+    position: absolute;
+
+    color: #48240e;
+
+    font-family: Georgia, serif;
+    font-size: 19px;
+    font-weight: bold;
+
+    transform: translate(-50%, -50%);
+}
+
+.num1  { top: 15%; left: 70%; }
+.num2  { top: 29%; left: 84%; }
+.num3  { top: 50%; left: 90%; }
+.num4  { top: 71%; left: 84%; }
+.num5  { top: 85%; left: 70%; }
+.num6  { top: 90%; left: 50%; }
+.num7  { top: 85%; left: 30%; }
+.num8  { top: 71%; left: 16%; }
+.num9  { top: 50%; left: 10%; }
+.num10 { top: 29%; left: 16%; }
+.num11 { top: 15%; left: 30%; }
+.num12 { top: 10%; left: 50%; }
+
+/* =========================
+   ANALOG HANDS
+========================= */
 
 .hand {
     position: absolute;
+
     bottom: 50%;
     left: 50%;
+
     transform-origin: bottom;
+
     transform: translateX(-50%) rotate(0deg);
+
     border-radius: 5px;
+    z-index: 3;
 }
 
 .hour-hand {
-    width: 6px;
-    height: 60px;
-    background-color: white;
+    width: 7px;
+    height: 65px;
+
+    background: linear-gradient(
+        90deg, #4a2009, #a36a25, #4a2009
+    );
 }
 
 .minute-hand {
     width: 5px;
     height: 90px;
-    background-color: white;
+
+    background: linear-gradient(
+        90deg, #4a2009, #a36a25, #4a2009
+    );
 }
 
 .second-hand {
-    width: 3px;
-    height: 100px;
-    background-color: lightblue;
+    width: 2px;
+    height: 105px;
+
+    background: #a32616;
 }
 
 .center-circle {
-    width: 12px;
-    height: 12px;
-    background-color: white;
-    border-radius: 50%;
     position: absolute;
+
+    width: 15px;
+    height: 15px;
+
     top: 50%;
     left: 50%;
+
     transform: translate(-50%, -50%);
+
+    background: #a32616;
+    border: 2px solid #d6a64c;
+    border-radius: 50%;
+
+    z-index: 5;
 }
 
-.numbers {
+/* =========================
+   PENDULUM WINDOW
+========================= */
+
+.pendulum-window {
     position: absolute;
-    width: 100%;
+
+    top: 330px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 170px;
+    height: 205px;
+
+    background: linear-gradient(
+        90deg,
+        #170903,
+        #38200f,
+        #170903
+    );
+
+    border: 8px ridge #bd873a;
+
+    border-radius: 85px 85px 20px 20px;
+
+    box-shadow:
+        inset 0 0 20px #000,
+        0 5px 10px #1b0c04;
+
+    overflow: hidden;
+}
+
+/* PENDULUM ROD */
+
+.pendulum {
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 6px;
     height: 100%;
+
+    transform-origin: top center;
+
+    animation: swing 2s ease-in-out infinite alternate;
 }
 
-.num {
+.pendulum-rod {
+    width: 5px;
+    height: 130px;
+
+    margin: auto;
+
+    background: linear-gradient(
+        90deg,
+        #805016,
+        #ffe08a,
+        #a16b21
+    );
+}
+
+/* PENDULUM BOB */
+
+.pendulum-bob {
     position: absolute;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    transform: translate(-50%, -50%);
+
+    bottom: 5px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle at 30% 25%,
+        #fff0a5,
+        #d29a37 45%,
+        #75400e
+    );
+
+    border: 3px solid #e5bd68;
+
+    box-shadow:
+        0 0 12px #000,
+        inset 0 0 8px #fff0a5;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #70400e;
+    font-size: 23px;
 }
 
-.num1 { top: 13%; left: 78%; }
-.num2 { top: 28%; left: 90%; }
-.num3 { top: 50%; left: 95%; }
-.num4 { top: 72%; left: 90%; }
-.num5 { top: 87%; left: 78%; }
-.num6 { top: 92%; left: 50%; }
-.num7 { top: 87%; left: 22%; }
-.num8 { top: 72%; left: 10%; }
-.num9 { top: 50%; left: 5%; }
-.num10 { top: 28%; left: 10%; }
-.num11 { top: 13%; left: 22%; }
-.num12 { top: 8%; left: 50%; }
+/* PENDULUM ANIMATION */
+
+@keyframes swing {
+    from {
+        transform: rotate(-15deg);
+    }
+
+    to {
+        transform: rotate(15deg);
+    }
+}
+
+/* =========================
+   DIGITAL CLOCK DISPLAY
+========================= */
+
+.digital-display {
+    position: absolute;
+
+    bottom: 55px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 245px;
+    padding: 10px;
+
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #120801,
+        #38200d,
+        #120801
+    );
+
+    border: 4px ridge #bd873a;
+    border-radius: 10px;
+
+    box-shadow:
+        inset 0 0 15px #000,
+        0 0 12px rgba(218, 165, 75, 0.4);
+}
+
+/* DIGITAL HEADING */
+
+.digital-heading {
+    color: #bd9650;
+    font-size: 9px;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+}
+
+/* DIGITAL TIME */
+
+.digital-time {
+    color: #f6cf77;
+
+    font-family: 'Courier New', monospace;
+
+    font-size: 27px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 0 5px #e9ad42,
+        0 0 12px #c58a2b;
+}
+
+/* AM PM */
+
+.digital-ampm {
+    color: #d9b66b;
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-top: 2px;
+}
+
+/* DAY */
+
+.digital-day {
+    color: #f4dba6;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 7px;
+}
+
+/* DATE */
+
+.digital-date {
+    color: #c9a76a;
+    font-size: 11px;
+    margin-top: 4px;
+    letter-spacing: 1px;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 400px) {
+    .clock-case {
+        transform: scale(0.85);
+    }
+}
