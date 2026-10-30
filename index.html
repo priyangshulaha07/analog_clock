@@ -4,30 +4,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analog Clock</title>
+
+    <title>Vintage Antique Smart Clock</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="clock">
-        <div class="hand hour-hand"></div>
-        <div class="hand minute-hand"></div>
-        <div class="hand second-hand"></div>
-        <div class="center-circle"></div>
-        <div class="numbers">
-            <span class="num num1">1</span>
-            <span class="num num2">2</span>
-            <span class="num num3">3</span>
-            <span class="num num4">4</span>
-            <span class="num num5">5</span>
-            <span class="num num6">6</span>
-            <span class="num num7">7</span>
-            <span class="num num8">8</span>
-            <span class="num num9">9</span>
-            <span class="num num10">10</span>
-            <span class="num num11">11</span>
-            <span class="num num12">12</span>
-        </div>
-    </div>
-    <script src="script.js"></script>
+
+    <main class="clock-case">
+
+        <!-- Wooden clock decoration -->
+        <div class="top-decoration">✦</div>
+
+        <!-- ANALOG CLOCK -->
+        <section class="clock">
+
+            <div class="clock-brand">VINTAGE</div>
+
+            <div class="numbers">
+                <span class="num num1">I</span>
+                <span class="num num2">II</span>
+                <span class="num num3">III</span>
+                <span class="num num4">IV</span>
+                <span class="num num5">V</span>
+                <span class="num num6">VI</span>
+                <span class="num num7">VII</span>
+                <span class="num num8">VIII</span>
+                <span class="num num9">IX</span>
+                <span class="num num10">X</span>
+                <span class="num num11">XI</span>
+                <span class="num num12">XII</span>
+            </div>
+
+            <div class="hand hour-hand"></div>
+            <div class="hand minute-hand"></div>
+            <div class="hand second-hand"></div>
+
+            <div class="center-circle"></div>
+
+        </section>
+
+        <!-- PENDULUM -->
+        <section class="pendulum-window">
+
+            <div class="pendulum">
+                <div class="pendulum-rod"></div>
+
+                <div class="pendulum-bob">
+                    <span>✦</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- DIGITAL CLOCK -->
+        <section class="digital-display">
+
+            <div class="digital-heading">
+                LOCAL TIME
+            </div>
+
+            <div class="digital-time" id="digitalTime">
+                12:00:00
+            </div>
+
+            <div class="digital-ampm" id="ampm">
+                AM
+            </div>
+
+            <div class="digital-day" id="digitalDay">
+                Monday
+            </div>
+
+            <div class="digital-date" id="digitalDate">
+                01 January 2026
+            </div>
+
+        </section>
+
+        <div class="bottom-decoration">❖</div>
+
+    </main>
+
+    <script src="script..js"></script>
+
 </body>
 </html>
